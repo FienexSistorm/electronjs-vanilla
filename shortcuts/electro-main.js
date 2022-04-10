@@ -26,11 +26,10 @@ const createMainWindow = () => {
 
 /**@method configureShortcuts */
 const configureShortcuts = () => {
-    globalShortcut.register("CommanOrControl+R", () => {
+    globalShortcut.register("CommandOrControl+R", () => {
         console.log("Content refreshing...");
-
     });
-    globalShortcut.register("Alt+CommandOrControl+I", () => {
+    globalShortcut.register("Shift+CommandOrControl+I", () => {
         console.log("DevTools shortcut is requested");
     });
     globalShortcut.register("CommandOrControl+F", () => {
@@ -39,19 +38,9 @@ const configureShortcuts = () => {
 }
 
 app.whenReady().then(() => {
-    globalShortcut.register("CommandOrControl+R", () => {
-        console.log("Content refreshing...");
-
-    });
-    globalShortcut.register("Shift+CommandOrControl+I", () => {
-        console.log("DevTools shortcut is requested");
-    });
-    globalShortcut.register("CommandOrControl+F", () => {
-        console.log("Find in content");
-    })
+    configureShortcuts();
     console.log("creating the main window..");
     createMainWindow();
-    configureShortcuts();
-    
+
 })
 
