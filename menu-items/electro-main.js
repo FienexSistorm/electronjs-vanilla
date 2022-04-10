@@ -16,7 +16,8 @@ const createMainWindow = () => {
         webPreferences: {
             preload: path.join(__dirname, "preload.js"),
             devTools: true
-        }
+        },
+        icon: `${__dirname}/assets/icon.ico`
     });
 
     mainWindow.loadFile("src/index.html");
